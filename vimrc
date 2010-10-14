@@ -20,14 +20,11 @@ filetype plugin indent on " but we still want ftplugins and ftindent!
 set encoding=utf-8 " utf-8 is my default text encoding.
 set scrolloff=3 " if possible, don't move the cursor to within 3 lines of window edges
 set autoindent " please indend for us!
-set showmode
-set showcmd
 set hidden
 set wildmenu " zsh-like tab completion list menus, yay!
 set wildmode=list:longest
 set visualbell
 set cursorline " show the line the cursor is on with highlighting (usually an underline)
-set ttyfast " smoother redrawing, because we're not on a 4400 baud modem.
 set ruler " display line numbers at the left side of the buffer
 set backspace=indent,eol,start " make backspace behave nicely.
 set laststatus=2 " always display a status line for the last window
@@ -86,8 +83,6 @@ set noet
 
 " syntax highlighting! oh my god, this is the most important thing ever.
 syn on
-" we are not a DOS system.
-set shellslash
 " we do have a mouse and sometimes it's nice to be able to use it
 " especially since it's a nipple mouse on our home row.
 set mouse=a
