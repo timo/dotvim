@@ -23,12 +23,13 @@ set autoindent " please indend for us!
 set hidden
 set wildmenu " zsh-like tab completion list menus, yay!
 set wildmode=list:longest
-set visualbell
 set cursorline " show the line the cursor is on with highlighting (usually an underline)
 set ruler " display line numbers at the left side of the buffer
 set backspace=indent,eol,start " make backspace behave nicely.
 set laststatus=2 " always display a status line for the last window
-set relativenumber " display relative line numbers instead of absolute
+" set relativenumber " display relative line numbers instead of absolute
+
+set autochdir " change directories when switching buffers etc.
 
 "
 "" searching
@@ -71,15 +72,14 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" 256 color terminals make things beautiful.
+" 88/256 color terminals make things beautiful.
 set t_Co=256
-" and inkpot is a beautiful 256 colors theme.
-colorscheme inkpot
+colorscheme wombat
 
 " this will probably be replaced by "do-indentation-right" plugin soon.
 set tabstop=4
 set shiftwidth=4
-set noet
+set et
 
 " syntax highlighting! oh my god, this is the most important thing ever.
 syn on
@@ -88,7 +88,7 @@ syn on
 set mouse=a
 
 " beautifully display tabs and trailing spaces
-set listchars=tab:»·,trail:·
+set listchars=tab:»\ ,trail:·
 set list
 
 " leave insert mode with ctrl-d
@@ -98,7 +98,7 @@ imap <C-d> <Esc>
 let g:ctags_statusline=1
 
 " open the scratchpad (from the scratchpad vim plugin) with ,s
-nnoremap <leader>s :Sscratch<cr>i
+nnoremap <leader>s :ScratchOpen<cr>i
 " open the nerdtree with ,ls
 nnoremap <leader>ls :NERDTree<cr>
 " open a prompt for Ack with ,a
@@ -112,3 +112,5 @@ set directory^=$HOME/.vim/swapfile//   "put all swap files together in one place
 
 set undofile " create an undo file for persistent undo
 set undodir^=$HOME/.vim/undofile//
+
+set formatprg=par\ -w75
