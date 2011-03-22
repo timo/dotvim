@@ -1,2 +1,2 @@
-" don't waste space with the toolbar (the menu is quite cute, though.)
-set toolbar=
+" don't waste space with the toolbar or menu
+set guioptions=
