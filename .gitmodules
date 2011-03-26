@@ -34,3 +34,6 @@
 [submodule "bundle/ikiwiki-syntax"]
 	path = bundle/ikiwiki-syntax
 	url = http://git.devnull.li/ikiwiki-syntax.git
+[submodule "bundle/mduem"]
+	path = bundle/mduem
+	url = https://github.com/kana/mduem.git
