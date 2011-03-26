@@ -28,3 +28,9 @@
 [submodule "bundle/sparkup"]
 	path = bundle/sparkup
 	url = http://github.com/rstacruz/sparkup.git
+[submodule "bundle/markdown"]
+	path = bundle/markdown
+	url = git://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/ikiwiki-syntax"]
+	path = bundle/ikiwiki-syntax
+	url = http://git.devnull.li/ikiwiki-syntax.git
