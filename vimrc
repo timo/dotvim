@@ -12,14 +12,14 @@ let mapleader="," " , is easy to type on the neo2 keyboard layout
 "
 " put your vim stuff into ~/.vim/bundle/name/ and everything's nice and tidy.
 "
-filetype off " when filetypes are on before pathogen is loaded, things explode
+filetype off " when file types are on before pathogen is loaded, things explode
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on " but we still want ftplugins and ftindent!
 
-set encoding=utf-8 " utf-8 is my default text encoding.
+set encoding=utf-8 " UTF-8 is my default text encoding.
 set scrolloff=3 " if possible, don't move the cursor to within 3 lines of window edges
-set autoindent " please indend for us!
+set autoindent " please indent for us!
 set hidden
 set wildmenu " zsh-like tab completion list menus, yay!
 set wildmode=list:longest
@@ -73,8 +73,8 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " 88/256 color terminals make things beautiful.
-set t_Co=256
-colorscheme wombat
+" set t_Co=256
+colorscheme solarized
 
 " this will probably be replaced by "do-indentation-right" plugin soon.
 set tabstop=4
@@ -114,3 +114,5 @@ set undofile " create an undo file for persistent undo
 set undodir^=$HOME/.vim/undofile//
 
 set formatprg=par\ -w75
+
+set spell " I'm a horrible speller.
