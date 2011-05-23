@@ -56,6 +56,8 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+nnoremap <leader>pv :!iki_preview.sh %<cr>
+
 "
 "" important note
 "
@@ -72,9 +74,15 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+
 " 88/256 color terminals make things beautiful.
 " set t_Co=256
+set background=dark
 colorscheme solarized
+
+" Show trailing whitepace and spaces before a tab:
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
 " this will probably be replaced by "do-indentation-right" plugin soon.
 set tabstop=4
@@ -115,4 +123,57 @@ set undodir^=$HOME/.vim/undofile//
 
 set formatprg=par\ -w75
 
-set spell " I'm a horrible speller.
+"set spell " I'm a horrible speller.
+
+fu! CustomFoldText() "{{{
+
+    "get first non-blank line
+    let fs = v:foldstart
+    while getline(fs) =~ '^\s*$' | let fs = nextnonblank( 1)
+    endwhile
+    if fs > v:foldend
+        let line = getline(v:foldstart)
+    else
+        let line = getline(fs)
+    endif
+
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    let foldSize = v:foldend - v:foldstart
+    let foldSizeStr = " " . foldSize . " lines "
+    let foldLevelStr = repeat("+--", v:foldlevel)
+    let lineCount = line("$")
+    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+    let expansionString = repeat(".", w - strlen(foldSizeStr) - strlen(line) - strlen(foldLevelStr) - strlen(foldPercentage))
+    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+endf "}}}
+
+set foldtext=CustomFoldText()
+
+let g:Gitv_OpenHorizontal=0
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+
+" Jump to the definition of whatever the cursor is on
+map <leader>j :RopeGotoDefinition<CR>
+
+" Rename whatever the cursor is on (including references to it)
+map <leader>r :RopeRename<CR>
+
+
+" close preview window automatically when we move around
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Don't let pyflakes use the quickfix window
+let g:pyflakes_use_quickfix = 0
+
+au BufRead,BufNewFile *.py nnoremap <buffer><CR> :nohlsearch\|:call PressedEnter()<cr>
+nnoremap <buffer><CR> :nohlsearch\|:call PressedEnter()<cr>
+
+nnoremap <leader>u :TlistToggle<CR>
+
+" update after 500 miliseconds of no cursor movement, rather than
+" 4 seconds (for taglist etc.)
+set updatetime=500

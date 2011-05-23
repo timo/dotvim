@@ -52,3 +52,18 @@
 [submodule "bundle/pyflakes"]
 	path = bundle/pyflakes
 	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "bundle/gitv"]
+	path = bundle/gitv
+	url = git://github.com/gregsexton/gitv.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/unimpaired"]
+	path = bundle/unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/taglist-plus"]
+	path = bundle/taglist-plus
+	url = https://github.com/int3/vim-taglist-plus.git
+[submodule "bundle/fakeclip"]
+	path = bundle/fakeclip
+	url = git://github.com/kana/vim-fakeclip.git
