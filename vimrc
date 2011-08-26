@@ -29,8 +29,6 @@ set backspace=indent,eol,start " make backspace behave nicely.
 set laststatus=2 " always display a status line for the last window
 " set relativenumber " display relative line numbers instead of absolute
 
-set autochdir " change directories when switching buffers etc.
-
 "
 "" searching
 "
@@ -77,8 +75,7 @@ vnoremap <F1> <ESC>
 
 " 88/256 color terminals make things beautiful.
 " set t_Co=256
-set background=dark
-colorscheme solarized
+colorscheme desert256
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
