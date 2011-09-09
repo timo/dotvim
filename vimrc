@@ -74,8 +74,8 @@ vnoremap <F1> <ESC>
 
 
 " 88/256 color terminals make things beautiful.
-" set t_Co=256
-colorscheme desert256
+set t_Co=256
+colorscheme molokai_sjl
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red

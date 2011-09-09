@@ -67,3 +67,6 @@
 [submodule "bundle/fakeclip"]
 	path = bundle/fakeclip
 	url = git://github.com/kana/vim-fakeclip.git
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/cschlueter/vim-molokai.git
