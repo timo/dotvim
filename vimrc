@@ -171,6 +171,9 @@ nnoremap <buffer><CR> :nohlsearch\|:call PressedEnter()<cr>
 
 nnoremap <leader>u :TlistToggle<CR>
 
+" when opening ctrlp, go up the file system until .git or similar is found
+let g:ctrlp_working_path_mode = 2
+
 " update after 500 miliseconds of no cursor movement, rather than
 " 4 seconds (for taglist etc.)
 set updatetime=500
