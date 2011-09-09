@@ -22,9 +22,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = http://github.com/tpope/vim-surround.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = http://github.com/wincent/Command-T.git
 [submodule "bundle/sparkup"]
 	path = bundle/sparkup
 	url = http://github.com/rstacruz/sparkup.git
@@ -70,3 +67,6 @@
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = https://github.com/cschlueter/vim-molokai.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
