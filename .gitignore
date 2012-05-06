@@ -1,4 +1,4 @@
 *.un~
 .*.un~
-undofile/
-swapfile/
+undofile/%*
+swapfile/%*
