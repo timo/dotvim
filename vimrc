@@ -111,7 +111,7 @@ nnoremap <leader>s :ScratchOpen<cr>i
 " open the nerdtree with ,ls
 nnoremap <leader>ls :NERDTree<cr>
 " open a prompt for Ack with ,a
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack ""<LEFT>
 
 " ignore several kinds of files for wildcard filename expansion
 " (also important for the command-T plugin)
