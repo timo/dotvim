@@ -190,6 +190,8 @@ nnoremap <leader>gw :w<cr>:Gwrite<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gW :w<cr>:Gwrite<cr>:Gstatus<cr>
 
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 " update after 500 miliseconds of no cursor movement, rather than
 " 4 seconds (for taglist etc.)
 set updatetime=500
