@@ -73,6 +73,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" splits now put the active window on the right side rather than the left.
+" feels more natural to me.
+set splitright
 
 " 88/256 color terminals make things beautiful.
 set t_Co=256
