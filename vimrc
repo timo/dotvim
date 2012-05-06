@@ -178,6 +178,18 @@ nnoremap <leader>u :TlistToggle<CR>
 " when opening ctrlp, go up the file system until .git or similar is found
 let g:ctrlp_working_path_mode = 2
 
+nnoremap <leader>gv :Gitv --all<cr>
+nnoremap <leader>gV :Gitv! --all<cr>
+vnoremap <leader>gV :Gitv! --all<cr>
+
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gb :Gblame<cr>
+
+nnoremap <leader>gw :w<cr>:Gwrite<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gW :w<cr>:Gwrite<cr>:Gstatus<cr>
+
 " update after 500 miliseconds of no cursor movement, rather than
 " 4 seconds (for taglist etc.)
 set updatetime=500
