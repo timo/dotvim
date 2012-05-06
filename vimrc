@@ -23,8 +23,9 @@ set autoindent " please indent for us!
 set hidden
 set wildmenu " zsh-like tab completion list menus, yay!
 set wildmode=list:longest
-set cursorline " show the line the cursor is on with highlighting (usually an underline)
-set ruler " display line numbers at the left side of the buffer
+"set cursorline " show the line the cursor is on with highlighting (usually an underline)
+"set cursorcolumn " show the column the cursor is on
+"set ruler " display line numbers at the left side of the buffer
 set backspace=indent,eol,start " make backspace behave nicely.
 set laststatus=2 " always display a status line for the last window
 " set relativenumber " display relative line numbers instead of absolute
@@ -63,7 +64,7 @@ nnoremap <leader>pv :!iki_preview.sh %<cr>
 " Thus I am not ashamed to use the arrow keys in vim for navigation.
 
 " display a vertical line at 85 characters
-set colorcolumn=85
+"set colorcolumn=85
 
 " ever hit f1 while trying to hit escape? probably.
 " ever hit f1 while trying to get the vim help? probably not.
