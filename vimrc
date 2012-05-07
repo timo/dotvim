@@ -115,7 +115,7 @@ nnoremap <leader>a :Ack ""<LEFT>
 
 " ignore several kinds of files for wildcard filename expansion
 " (also important for the command-T plugin)
-set wildignore+=*.o,*.pyc,*.pyo,.git,.hg,.svn,lib/**
+set wildignore+=*.o,*.pyc,*.pyo,.git,.hg,.svn,lib/**,.tox
 
 set directory^=$HOME/.vim/swapfile//   "put all swap files together in one place
 
@@ -189,6 +189,8 @@ nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gw :w<cr>:Gwrite<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gW :w<cr>:Gwrite<cr>:Gstatus<cr>
+nnoremap <leader>ge :Gedit<cr>
+
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
