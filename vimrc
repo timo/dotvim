@@ -191,8 +191,7 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gW :w<cr>:Gwrite<cr>:Gstatus<cr>
 nnoremap <leader>ge :Gedit<cr>
 
-
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+let g:Powerline_symbols = 'fancy'
 
 " update after 500 miliseconds of no cursor movement, rather than
 " 4 seconds (for taglist etc.)
