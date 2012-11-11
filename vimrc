@@ -97,7 +97,7 @@ syn on
 set mouse=a
 
 " beautifully display tabs and trailing spaces
-set listchars=tab:»\ ,trail:·
+set listchars=tab:¬\ ,trail:·
 set list
 
 " leave insert mode with ctrl-d
@@ -196,3 +196,5 @@ let g:Powerline_symbols = 'fancy'
 " update after 500 miliseconds of no cursor movement, rather than
 " 4 seconds (for taglist etc.)
 set updatetime=500
+
+au BufRead,BufNewFile tmpmsg.* set filetype=mail
