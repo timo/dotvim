@@ -79,7 +79,7 @@ set splitright
 
 " 88/256 color terminals make things beautiful.
 set t_Co=256
-colorscheme molokai_sjl
+colorscheme vividchalk
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -100,6 +100,7 @@ set mouse=a
 set listchars=tab:¬\ ,trail:·
 set list
 
+
 " leave insert mode with ctrl-d
 imap <C-d> <Esc>
 
@@ -112,6 +113,8 @@ nnoremap <leader>s :ScratchOpen<cr>i
 nnoremap <leader>ls :NERDTree<cr>
 " open a prompt for Ack with ,a
 nnoremap <leader>a :Ack ""<LEFT>
+" use ack to immediately search for the word under the cursor
+nnoremap <leader>A :Ack ""<LEFT><C-R><C-W><RIGHT><CR>
 
 " ignore several kinds of files for wildcard filename expansion
 " (also important for the command-T plugin)
@@ -121,6 +124,8 @@ set directory^=$HOME/.vim/swapfile//   "put all swap files together in one place
 
 set undofile " create an undo file for persistent undo
 set undodir^=$HOME/.vim/undofile//
+
+set history=100
 
 set formatprg=par\ -w75
 
@@ -164,8 +169,8 @@ map <leader>r :RopeRename<CR>
 
 
 " close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
@@ -192,6 +197,16 @@ nnoremap <leader>gW :w<cr>:Gwrite<cr>:Gstatus<cr>
 nnoremap <leader>ge :Gedit<cr>
 
 let g:Powerline_symbols = 'fancy'
+
+" jedi autocomplete configuration
+
+let g:jedi#goto_command = '<leader>G'
+
+" haskellmode stuff
+
+au BufEnter *.hs compiler ghc
+let g:haddock_browser="/usr/bin/chromium"
+let g:ghc="/usr/bin/ghc-7.4.1"
 
 " update after 500 miliseconds of no cursor movement, rather than
 " 4 seconds (for taglist etc.)

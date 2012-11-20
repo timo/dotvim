@@ -82,3 +82,12 @@
 [submodule "bundle/jedi"]
 	path = bundle/jedi
 	url = git://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "bundle/csapprox"]
+	path = bundle/csapprox
+	url = git://github.com/vim-scripts/CSApprox.git
+[submodule "bundle/ipython"]
+	path = bundle/ipython
+	url = git://github.com/ivanov/vim-ipython.git
