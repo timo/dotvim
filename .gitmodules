@@ -91,3 +91,6 @@
 [submodule "bundle/ipython"]
 	path = bundle/ipython
 	url = git://github.com/ivanov/vim-ipython.git
+[submodule "bundle/badwolf"]
+	path = bundle/badwolf
+	url = git://github.com/sjl/badwolf.git
