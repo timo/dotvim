@@ -8,17 +8,19 @@ set nocompatible " don't be Vi.
 
 let mapleader="," " , is easy to type on the neo2 keyboard layout
 
+set shell=/bin/sh " if we use fish, things are not going to work.
+
 "
 "" pathogen bundle support
 "
 " put your vim stuff into ~/.vim/bundle/name/ and everything's nice and tidy.
 "
 filetype off " when file types are on before pathogen is loaded, things explode
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on " but we still want ftplugins and ftindent!
 
-set encoding=utf-8 " UTF-8 is my default text encoding.
+set encoding=utf8 " UTF-8 is my default text encoding.
 set scrolloff=3 " if possible, don't move the cursor to within 3 lines of window edges
 set autoindent " please indent for us!
 set hidden
@@ -51,10 +53,10 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <down> gj
 nnoremap <up> gk
 " don't move the cursor in insert mode.
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 nnoremap <leader>pv :!iki_preview.sh %<cr>
 
@@ -80,7 +82,7 @@ set splitright
 
 " 88/256 color terminals make things beautiful.
 set t_Co=256
-colorscheme vividchalk
+colorscheme distinguished
 
 " Show trailing whitepace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -108,9 +110,6 @@ imap <C-d> <Esc>
 " something for ctags or something.
 let g:ctags_statusline=1
 
-"use Ag ("the silver searcher" by ggreer) as ack program
-let g:ackprg='ag --nogroup --nocolor --column'
-
 " open the scratchpad (from the scratchpad vim plugin) with ,s
 nnoremap <leader>s :ScratchOpen<cr>i
 " open the nerdtree with ,ls
@@ -122,7 +121,7 @@ nnoremap <leader>A :Ack ""<LEFT><C-R><C-W><RIGHT><CR>
 
 " ignore several kinds of files for wildcard filename expansion
 " (also important for the command-T plugin)
-set wildignore+=*.o,*.pyc,*.pyo,.git,.hg,.svn,lib/**,.tox
+set wildignore+=*.o,*.pyc,*.pyo,.git,.hg,.svn,.tox
 
 set directory^=$HOME/.vim/swapfile//   "put all swap files together in one place
 
@@ -135,29 +134,29 @@ set formatprg=par\ -w75
 
 "set spell " I'm a horrible speller.
 
-fu! CustomFoldText() "{{{
+"fu! CustomFoldText() "{{{
 
-    "get first non-blank line
-    let fs = v:foldstart
-    while getline(fs) =~ '^\s*$' | let fs = nextnonblank( 1)
-    endwhile
-    if fs > v:foldend
-        let line = getline(v:foldstart)
-    else
-        let line = getline(fs)
-    endif
+    ""get first non-blank line
+    "let fs = v:foldstart
+    "while getline(fs) =~ '^\s*$' | let fs = nextnonblank( 1)
+    "endwhile
+    "if fs > v:foldend
+        "let line = getline(v:foldstart)
+    "else
+        "let line = getline(fs)
+    "endif
 
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let foldSize = v:foldend - v:foldstart
-    let foldSizeStr = " " . foldSize . " lines "
-    let foldLevelStr = repeat("+--", v:foldlevel)
-    let lineCount = line("$")
-    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
-    let expansionString = repeat(".", w - strlen(foldSizeStr) - strlen(line) - strlen(foldLevelStr) - strlen(foldPercentage))
-    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
-endf "}}}
+    "let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    "let foldSize = v:foldend - v:foldstart
+    "let foldSizeStr = " " . foldSize . " lines "
+    "let foldLevelStr = repeat("+--", v:foldlevel)
+    "let lineCount = line("$")
+    "let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+    "let expansionString = repeat(".", w - strlen(foldSizeStr) - strlen(line) - strlen(foldLevelStr) - strlen(foldPercentage))
+    "return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+"endf "}}}
 
-set foldtext=CustomFoldText()
+"set foldtext=CustomFoldText()
 
 let g:Gitv_OpenHorizontal=0
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -179,8 +178,8 @@ map <leader>r :RopeRename<CR>
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
 
-au BufRead,BufNewFile *.py nnoremap <buffer><CR> :nohlsearch\|:call PressedEnter()<cr>
-nnoremap <buffer><CR> :nohlsearch\|:call PressedEnter()<cr>
+au BufRead,BufNewFile *.py nnoremap <buffer><CR> :nohlsearch<cr>
+nnoremap <buffer><CR> :nohlsearch<cr>
 
 nnoremap <leader>u :TlistToggle<CR>
 

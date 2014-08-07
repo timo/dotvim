@@ -1,3 +1,3 @@
 " don't waste space with the toolbar or menu
 set guioptions=
-set guifont=Monaco 8
+set guifont=Monaco\ 9
