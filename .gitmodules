@@ -28,9 +28,6 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = git://github.com/plasticboy/vim-markdown.git
-[submodule "bundle/ikiwiki-syntax"]
-	path = bundle/ikiwiki-syntax
-	url = http://git.devnull.li/ikiwiki-syntax.git
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
