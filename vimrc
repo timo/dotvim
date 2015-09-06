@@ -33,6 +33,8 @@ set backspace=indent,eol,start " make backspace behave nicely.
 set laststatus=2 " always display a status line for the last window
 " set relativenumber " display relative line numbers instead of absolute
 
+let g:airline#extensions#tabline#enabled = 1
+
 "
 "" searching
 "
